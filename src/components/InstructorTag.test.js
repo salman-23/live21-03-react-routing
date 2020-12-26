@@ -1,3 +1,26 @@
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * DO NOT MODIFY THIS FILE
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 import { fireEvent, render } from "@testing-library/react";
 import InstructorTag from "./InstructorTag";
 import "jest-styled-components";
