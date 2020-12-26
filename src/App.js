@@ -1,24 +1,47 @@
-import logo from "./logo.svg";
+import { AppWrapper } from "./components/styles";
 import "./App.css";
+import InstructorTag from "./components/InstructorTag";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <AppWrapper>
+        <h2>When in doubt, ask for help!</h2>
+        <InstructorTag emoji="🌚" name="Hamza" github="DarthHamza" />
+        <InstructorTag emoji="🐥" name="Laila" github="Lailz" />
+        <InstructorTag emoji="🦍" name="Hasan" github="thehasanas" />
+      </AppWrapper>
+      {/* <div className="AppWrapper">
+        <h2>When in doubt, ask for help!</h2>
+
+        <div
+          className="TagWrapper"
+          onClick={() => window.open(`https://github.com/DarthHamza`)}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <span className="Emoji">🌚</span>
+          <span className="Name">Hamza</span>
+          <span className="GoToGithub">Go to GitHub</span>
+        </div>
+
+        <div
+          className="TagWrapper"
+          onClick={() => window.open(`https://github.com/Lailz`)}
+        >
+          <span className="Emoji">🐥</span>
+          <span className="Name">Laila</span>
+          <span className="GoToGithub">Go to GitHub</span>
+        </div>
+
+        <div
+          className="TagWrapper"
+          onClick={() => window.open(`https://github.com/thehasanas`)}
+        >
+          <span className="Emjkoji">🦍</span>
+          <span className="Name">Hasan</span>
+          <span className="GoToGithub">Go to GitHub</span>
+        </div>
+      </div> */}
+    </>
   );
 }
 
