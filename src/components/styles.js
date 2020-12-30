@@ -11,7 +11,7 @@ export const AppWrapper = styled.div`
   color: white;
 `;
 
-export const Wrapper = styled.div`
+export const TagWrapper = styled.div`
   display: flex;
   align-items: center;
 

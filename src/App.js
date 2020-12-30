@@ -1,7 +1,7 @@
 import { AppWrapper } from "./components/styles";
 import InstructorTag from "./components/InstructorTag";
 
-function App() {
+const App = () => {
   return (
     <AppWrapper>
       <h2>When in doubt, ask for help!</h2>
@@ -10,6 +10,6 @@ function App() {
       <InstructorTag emoji="🦍" name="Hasan" github="thehasanas" />
     </AppWrapper>
   );
-}
+};
 
 export default App;
