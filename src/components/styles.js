@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AppWrapper = styled.div`
-  background-color: #282c34;
+  background-color: ${(props) => props.theme.black};
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -43,8 +43,41 @@ export const Name = styled.span`
   color: rgba(255, 255, 255, 0.9); ;
 `;
 
-export const GoToGithub = styled.span`
+export const GoToProfile = styled.span`
   font-size: 0.8em;
   user-select: none;
   color: rgba(255, 255, 255, 0.3);
+`;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+`;
+
+export const Button = styled.button`
+  background: ${(props) => props.color ?? "white"};
+  color: ${(props) => props.textColor ?? "black"};
+
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+
+  &:hover {
+    box-shadow: 0 9px #aaa;
+  }
+
+  &:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 `;
