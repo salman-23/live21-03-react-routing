@@ -29,4 +29,4 @@ Stick with the route names already present in the app. For the instructor profil
 
 Good luck!
 
-> To test your work, run `yarn test` in the project directory
+> To test your work, run `yarn test` in the project directory.
