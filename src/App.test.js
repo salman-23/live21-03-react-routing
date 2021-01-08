@@ -26,7 +26,7 @@ import { MemoryRouter, Route } from "react-router";
 import App from "./App";
 import instructors from "./data";
 
-instructors[4] = {
+instructors[3] = {
   name: "Nikita",
   emoji: "👽",
   slug: "nikita",

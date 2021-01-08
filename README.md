@@ -28,3 +28,5 @@ Using `react-router` you are expected to introduce a more robust routing solutio
 Stick with the route names already present in the app. For the instructor profile route, use the slug of the instructor as a parameter.
 
 Good luck!
+
+> To test your work, run `yarn test` in the project directory
