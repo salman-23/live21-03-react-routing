@@ -26,20 +26,27 @@ import { MemoryRouter, Route } from "react-router";
 import App from "./App";
 import instructors from "./data";
 
-const [hamza, laila, hasan] = instructors;
+instructors[4] = {
+  name: "Nikita",
+  emoji: "👽",
+  slug: "nikita",
+  github: "cheloveq",
+  description: "Nikita is a very funky guy!",
+};
+
+const [hamza, laila, hasan, nikita] = instructors;
 
 describe("Starting from empty route", () => {
-  let testHistory, testLocation;
+  let testLocation;
   window.open = jest.fn();
 
   beforeEach(() => {
     render(
       <MemoryRouter>
-        <App />
+        <App instructors={instructors} />
         <Route
           path="*"
           render={({ history, location }) => {
-            testHistory = history;
             testLocation = location;
             return null;
           }}
@@ -51,14 +58,14 @@ describe("Starting from empty route", () => {
   });
 
   test("clicking a tag navigates to instructor slug page with correct data", () => {
-    fireEvent.click(screen.queryByText(laila.name));
-    expect(testLocation.pathname).toEqual(`/instructors/${laila.slug}`);
-    expect(screen.queryByText(laila.description)).toBeInTheDocument();
+    fireEvent.click(screen.queryByText(nikita.name));
+    expect(testLocation.pathname).toEqual(`/instructors/${nikita.slug}`);
+    expect(screen.queryByText(nikita.description)).toBeInTheDocument();
     expect(screen.queryByText(hasan.description)).not.toBeInTheDocument();
 
     fireEvent.click(screen.queryByText("github", { exact: false }));
     expect(window.open).toHaveBeenCalledWith(
-      `https://github.com/${laila.github}`
+      `https://github.com/${nikita.github}`
     );
   });
 

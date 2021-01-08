@@ -1,14 +1,20 @@
-import { GoToGithub, TagWrapper, Emoji, Name } from "./styles";
+import { GoToProfile, TagWrapper, Emoji, Name } from "./styles";
 
-const InstructorTag = ({ emoji, name, github }) => {
-  const goToGitHubPage = () => window.open(`https://github.com/${github}`);
+const InstructorTag = ({ instructor, goTo }) => {
+  const { emoji, name, slug } = instructor;
 
   return (
-    <TagWrapper onClick={goToGitHubPage}>
-      <Emoji>{emoji}</Emoji>
-      <Name>{name}</Name>
-      <GoToGithub>Go to GitHub</GoToGithub>
-    </TagWrapper>
+    <div
+      onClick={() => {
+        goTo(`/instructors/${slug}`);
+      }}
+    >
+      <TagWrapper>
+        <Emoji>{emoji}</Emoji>
+        <Name>{name}</Name>
+        <GoToProfile>Go to profile</GoToProfile>
+      </TagWrapper>
+    </div>
   );
 };
 

@@ -1,15 +1,54 @@
 import { AppWrapper } from "./components/styles";
-import InstructorTag from "./components/InstructorTag";
+import Home from "./components/Home";
+import InstructorProfile from "./components/InstructorProfile";
+import NotFound from "./components/NotFound";
+import { useState } from "react";
 
-const App = () => {
-  return (
-    <AppWrapper>
-      <h2>When in doubt, ask for help!</h2>
-      <InstructorTag emoji="🌚" name="Hamza" github="DarthHamza" />
-      <InstructorTag emoji="🐥" name="Laila" github="Lailz" />
-      <InstructorTag emoji="🦍" name="Hasan" github="thehasanas" />
-    </AppWrapper>
-  );
+const App = ({ instructors }) => {
+  const [currentPage, setCurrentPage] = useState("/");
+
+  const homemadeRouter = () => {
+    switch (currentPage) {
+      case "/":
+        return <Home instructors={instructors} goTo={setCurrentPage} />;
+
+      case "/instructors/hamza":
+        return (
+          <InstructorProfile
+            instructors={instructors}
+            instructorSlug="hamza"
+            goTo={setCurrentPage}
+          />
+        );
+
+      case "/instructors/laila":
+        return (
+          <InstructorProfile
+            instructors={instructors}
+            instructorSlug="laila"
+            goTo={setCurrentPage}
+          />
+        );
+
+      case "/instructors/hasan":
+        return (
+          <InstructorProfile
+            instructors={instructors}
+            instructorSlug="hasan"
+            goTo={setCurrentPage}
+          />
+        );
+
+      case "/404":
+        return <NotFound goTo={setCurrentPage} />;
+
+      default:
+        setCurrentPage("/404");
+        break;
+    }
+  };
+
+  return <AppWrapper>{homemadeRouter()}</AppWrapper>;
 };
 
 export default App;
