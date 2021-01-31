@@ -85,7 +85,7 @@ describe("Starting from", () => {
     beforeAll(() => {
       render(
         <MemoryRouter initialEntries={[`/instructors/${hasan.slug}`]}>
-          <App />
+          <App instructors={instructors} />
           <Route
             path="*"
             render={({ history, location }) => {
@@ -114,7 +114,7 @@ describe("Starting from", () => {
     test("/users/hasan it redirects to the /404 route", () => {
       render(
         <MemoryRouter initialEntries={["/users/hasan"]}>
-          <App />
+          <App instructors={instructors} />
           <Route
             path="*"
             render={({ location }) => {
@@ -131,7 +131,7 @@ describe("Starting from", () => {
     test("/random we can navigate back home from the 404 page", () => {
       render(
         <MemoryRouter initialEntries={["/random"]}>
-          <App />
+          <App instructors={instructors} />
           <Route
             path="*"
             render={({ location }) => {
