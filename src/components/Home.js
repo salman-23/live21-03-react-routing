@@ -4,7 +4,6 @@ import { useParams, Redirect } from "react-router-dom";
 const Home = ({ instructors }) => {
   const { slug } = useParams();
   if (slug) return <Redirect exact to="/404" />;
-  // else
     return (
       <>
         <h2>When in doubt, ask for help!</h2>

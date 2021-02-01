@@ -11,7 +11,6 @@ const InstructorProfile = ({ instructors }) => {
     window.open(`https://github.com/${instructor.github}`);
 
   if (!instructor) return <Redirect exact to="/404" />;
-  // else
     return (
       <>
         <h1>{instructor.emoji}</h1>
