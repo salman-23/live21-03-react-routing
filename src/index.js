@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import instructors from "./data";
@@ -26,10 +27,12 @@ const GlobalStyle = createGlobalStyle`
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <ThemeProvider theme={theme}>
-      <App instructors={instructors} />
-    </ThemeProvider>
+    <BrowserRouter>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <App instructors={instructors} />
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
